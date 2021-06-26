@@ -9,6 +9,8 @@ django-registration-redux = "*"
 django-environ = "*"
 django-debug-toolbar = "*"
 django-extensions = "*"
+env = "*"
+debugger = "*"
 
 [dev-packages]
 
