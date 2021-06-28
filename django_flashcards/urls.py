@@ -17,12 +17,12 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import path, include
 
-from cards import views as cards_views
+from cards import views as decks_views
 
 urlpatterns = [
-    path("", cards_views.homepage, name="home"),
+    path("", decks_views.homepage, name="home"),
     path('accounts/', include('registration.backends.default.urls')),
-    path('cards/', cards_views.list_cards, name='list_cards'),
+    path('cards/', decks_views.list_decks, name='list_decks'),
     path('admin/', admin.site.urls),
 ]
 
