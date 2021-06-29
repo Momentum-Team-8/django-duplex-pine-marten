@@ -5,7 +5,7 @@
 <h1 class="deck"> Choose your Deck </h1>
 <div class="container"> 
     {% for deck in decks %}
-    <p class="category"> <a href="{% url 'list_addition_cards' slug=category.slug %}">{{ deck.name }}</a></p>   
+    <p class="deck_name">{{ deck.name }}</p>   
     {% endfor %}
 </div> 
 

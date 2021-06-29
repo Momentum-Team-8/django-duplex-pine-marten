@@ -33,3 +33,6 @@ class Deck(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=256)
     description = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.name

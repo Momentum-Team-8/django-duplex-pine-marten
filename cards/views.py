@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
-from .models import Card, Category
+from .models import Card, Category, Deck
 
 
 # Create your views here.
@@ -16,7 +16,7 @@ def homepage(request):
 
 @login_required
 def list_decks(request):
-    decks = Category.objects.all()
+    decks = Deck.objects.all()
     return render(request, "cards/list_decks.html",
                 {"decks": decks})
 
