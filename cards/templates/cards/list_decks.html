@@ -3,6 +3,7 @@
 {% block content %}
 
 <h1 class="deck"> Choose your Deck </h1>
+
 <div class="container"> 
     {% for deck in decks %}
     <p class="deck_name">{{ deck.name }}</p>   
@@ -10,3 +11,10 @@
 </div> 
 
 {% endblock %}
+
+<!-- file = Path(args.file)
+    if file.is_file():
+        print_word_freq(file)
+    else:
+        print(f"{file} does not exist!")
+        exit(1) -->

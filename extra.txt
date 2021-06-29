@@ -1,0 +1,13 @@
+<!-- <p class="add_deck"><a href="{% url 'add_deck' %}">Add New Deck</a></p> -->
+
+<h1 class="add_deck_title">Add Deck</h1>
+
+<div class="form">
+    <form action="{% url 'add_deck' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+          <button type="submit">Add Deck</button>
+        </div>
+      </form>
+    </div>

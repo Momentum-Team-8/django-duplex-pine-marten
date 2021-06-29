@@ -6,8 +6,7 @@ from .models import Card, Category, Deck
 
 
 # Create your views here.
-# def list_decks(request):
-#     return render(request, "cards/list_decks.html")
+
 
 def homepage(request):
     if request.user.is_authenticated:
@@ -19,6 +18,11 @@ def list_decks(request):
     decks = Deck.objects.all()
     return render(request, "cards/list_decks.html",
                 {"decks": decks})
+
+def list_cards(request, pk):
+    deck = get_object_or_404(Deck, pk=pk)
+    cards = deck.cards.order_by('?')
+    return render(request, "cards/list_cards.html", {"cards": cards, "deck": deck, "pk": pk})
 
 def categories_cards(request, slug):
     category = get_object_or_404(Category, slug=slug)
