@@ -18,11 +18,13 @@ from django.conf import settings
 from django.urls import path, include
 
 from cards import views as decks_views
+from cards import views as cards_views
 
 urlpatterns = [
     path("", decks_views.homepage, name="home"),
     path('accounts/', include('registration.backends.default.urls')),
     path('cards/', decks_views.list_decks, name='list_decks'),
+    path('category/<slug:slug>', cards_views.categories_cards, name="categories_cards"),
     path('admin/', admin.site.urls),
 ]
 

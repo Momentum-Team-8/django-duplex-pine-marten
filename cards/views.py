@@ -19,3 +19,9 @@ def list_decks(request):
     decks = Category.objects.all()
     return render(request, "cards/list_decks.html",
                 {"decks": decks})
+
+def categories_cards(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    cards = category.cards.all()
+
+    return render(request, "cards/list_cards.html", {"category": category, "cards": cards})

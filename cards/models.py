@@ -10,7 +10,7 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
 class Card(models.Model):
-    #  = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="cards")
+    deck = models.ForeignKey("Deck", on_delete=models.CASCADE)
     question = models.CharField(max_length=256)
     answer = models.CharField(max_length=256)
     categories = models.ManyToManyField("Category", related_name="cards")
@@ -28,3 +28,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+class Deck(models.Model):
+    owner = models.ForeignKey(User, null=True, default=True, related_name="owner_deck", on_delete=models.CASCADE)
+    name = models.CharField(max_length=256)
+    description = models.CharField(max_length=256)
