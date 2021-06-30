@@ -89,3 +89,8 @@
   .card__cta p > .space {
     margin-left: 2rem;
   }
+
+  .display-none {
+    display: none;
+    
+  }

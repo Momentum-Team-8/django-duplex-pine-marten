@@ -1,9 +1,15 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% load static %}
+{% block javascript %}
+<script src="{% static 'js/peekaboo.js' %}" defer></script>
+{% endblock javascript %}
+{% block content %}
 
 <h1 class="deck_name">{{deck.name}}</h1>
-
+<h2 class="instructions">Hover over card to see answer</h2>
+<button class="start-deck">Start Deck</button>
 {% for card in cards %}
-<div class="content">
+<div class="content display-none" id={{forloop.counter}}>
   <div class="card">
     <div class="card__side card__side--front">
       <!-- Front Content -->
