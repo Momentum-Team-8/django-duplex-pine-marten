@@ -2,20 +2,30 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
-from .models import Card
+from .models import Card, Category, Deck
 
 
 # Create your views here.
-# def list_decks(request):
-#     return render(request, "cards/list_decks.html")
+
 
 def homepage(request):
     if request.user.is_authenticated:
-        return redirect ("list_cards")
+        return redirect ("list_decks")
     return render(request, "cards/homepage.html")
 
 @login_required
-def list_cards(request):
-    cards = Card.objects.all()
+def list_decks(request):
+    decks = Deck.objects.all()
     return render(request, "cards/list_decks.html",
-                {"cards": cards})
+                {"decks": decks})
+
+def list_cards(request, pk):
+    deck = get_object_or_404(Deck, pk=pk)
+    cards = deck.cards.order_by('?')
+    return render(request, "cards/list_cards.html", {"cards": cards, "deck": deck, "pk": pk})
+
+def categories_cards(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    cards = category.cards.all()
+
+    return render(request, "cards/list_cards.html", {"category": category, "cards": cards})

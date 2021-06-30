@@ -2,10 +2,19 @@
 
 {% block content %}
 
+<h1 class="deck"> Choose your Deck </h1>
+
 <div class="container"> 
-    {% for card in cards %}
-    <p class="question">{{card.question}}</p>   
+    {% for deck in decks %}
+    <p class="deck_name"><a href="{% url 'list_cards' pk=deck.pk %}">{{deck.name }}</a></p>   
     {% endfor %}
 </div> 
 
 {% endblock %}
+
+<!-- file = Path(args.file)
+    if file.is_file():
+        print_word_freq(file)
+    else:
+        print(f"{file} does not exist!")
+        exit(1) -->
