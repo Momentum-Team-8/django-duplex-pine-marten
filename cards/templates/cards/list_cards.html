@@ -1,13 +1,24 @@
-{% extends "base.html" %} 
+{% extends "base.html" %} {% block content %}
 
-{% block content %}
-<h1 class="card"> Cards </h1>
+<h1 class="deck_name">{{deck.name}}</h1>
 
-<div class="container"> 
+
+<div class="content">
+  <div class="card">
+    <div class="card__side card__side--front">
+      <!-- Front Content -->
     {% for card in cards %}
-    <p class="card_name">{{ card.question }}</p> 
-    <button class="flip_card_button">Flip Card</button>
-    <p class="card_name">{{ card.answer }}</p>   
+      <div class="card__cont">
+        <span>(<span class="green">{{ card.question }}</span>)</span>
+      </div>
+    </div>
+    <div class="card__side card__side--back">
+      <!-- Back Content -->
+      <div class="card__cta">
+        <span class="green">{{ card.answer }}</span>
+      </div>
+    </div>
+  </div>
+</div>
     {% endfor %}
-</div> 
-{% endblock content %} 
+{% endblock content %}
