@@ -6,7 +6,7 @@
 
 <div class="container"> 
     {% for deck in decks %}
-    <p class="deck_name">{{ deck.name }}</p>   
+    <p class="deck_name"><a href="{% url 'list_cards' pk=deck.pk %}">{{deck.name }}</a></p>   
     {% endfor %}
 </div> 
 

@@ -5,7 +5,9 @@
 
 <div class="container"> 
     {% for card in cards %}
-    <p class="card_name">{{ card.question }}</p>   
+    <p class="card_name">{{ card.question }}</p> 
+    <button class="flip_card_button">Flip Card</button>
+    <p class="card_name">{{ card.answer }}</p>   
     {% endfor %}
 </div> 
 {% endblock content %} 
