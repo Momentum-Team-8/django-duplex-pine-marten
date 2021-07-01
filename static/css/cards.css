@@ -3,8 +3,8 @@
     font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
   }
   
-  body {
-    background-image: linear-gradient(to bottom right, #ff9800, #ffa726);
+  .body {
+    background-color: #ffa726;
   }
   
   .blue {
@@ -82,6 +82,9 @@
     transform: translate(-50%, -50%);
     width: 90%;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .card__cta p {
     margin-left: 1rem;
