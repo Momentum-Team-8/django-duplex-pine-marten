@@ -4,7 +4,8 @@
   }
   
   .body {
-    background-color: #ffa726;
+    background-color: lightblue;
+    width: 100%;
   }
   
   .blue {
@@ -95,4 +96,12 @@
 
   .display-none {
     display: none; 
+  }
+
+  .next-button {
+    position: sticky;
+    bottom: 0;
+    margin: auto;
+    width: 50%;
+    display: block;
   }
