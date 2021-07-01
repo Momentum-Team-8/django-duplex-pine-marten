@@ -1,4 +1,4 @@
-
+// Big shot-out to Amy & Jeanette for the JS!
 let display = document.getElementById('1');
 let counter = 1
 let nextButton = document.getElementById('next-button')
