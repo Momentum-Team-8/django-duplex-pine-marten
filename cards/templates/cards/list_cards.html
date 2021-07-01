@@ -7,7 +7,7 @@
 
 <h1 class="deck_name">{{deck.name}}</h1>
 <h2 class="instructions">Hover over card to see answer</h2>
-<button class="start-deck">Start Deck</button>
+<button class="start-deck" id="start-deck-button">Start Deck</button>
 {% for card in cards %}
 <div class="content display-none" id={{forloop.counter}}>
   <div class="card">
