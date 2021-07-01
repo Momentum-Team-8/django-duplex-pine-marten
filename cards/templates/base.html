@@ -6,17 +6,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
     <link rel="stylesheet" href="{% static 'css/cards.css' %}">
+    {% block javascript %}
+    {% endblock javascript %}
     <title>Flash Card Fever</title>
 </head>
-<body>
+<body class="body">
+    <h1>Flash Card Fever</h1>
     <nav>
         {% if user.is_authenticated %}
-        <p>Welcome, {{user.username}}!</p>
         <a href="{% url 'auth_logout' %}">Logout</a>
         {% else %}
-        <p>Please login to see this page.</p>
+        <p>Welcome to Flash Card Fever--The Ultimate Flash Card Experience!</p>
+        <p>Please login to flex your brain.</p>
         <a href="{% url 'auth_login' %}">Login</a>
         {% endif %}
     </nav>
