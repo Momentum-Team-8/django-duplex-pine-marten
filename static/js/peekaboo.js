@@ -1,13 +1,18 @@
-console.log('peekaboo')
+
+let display = document.getElementById('1');
+let counter = 1
+let nextButton = document.getElementById('next-button')
 
 document.querySelector('.start-deck').addEventListener('click',() => {
-    const display = document.getElementById('1');
-    // console.log(display)
     display.classList.replace("display-none", "active")
-    const button = document.getElementById('start-deck-button');
-        if (button.innerText =='Start Deck') { 
-            button.innerText = 'Next Card'
-        } 
+    nextButton.classList.replace("display-none", "next-button")
+})
+
+nextButton.addEventListener('click', () => {
+    counter ++
+    display = document.getElementById(`${counter}`)
+    display.classList.replace("display-none", "active")
+    display.scrollIntoView()
 })
 
 
